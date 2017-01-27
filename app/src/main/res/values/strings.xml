@@ -6,4 +6,8 @@
     <string name="dev_by">Developed By:</string>
     <string name="year">2017</string>
     <string name="class_section">CSCI 4020 W1</string>
+    <string name="play">Play</string>
+    <string name="about">About</string>
+    <string name="exit">Exit</string>
+    <string name="game_rules">**Put Rules Here**</string>
 </resources>

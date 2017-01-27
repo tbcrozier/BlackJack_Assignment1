@@ -10,14 +10,31 @@
         android:gravity="center_horizontal">
 
         <TextView
-            android:text="TextView"
+            android:text="@string/blackjack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView"
-            tools:text="@string/blackjack"
             tools:textSize="46sp"
             android:layout_centerHorizontal="true" />
-    </LinearLayout>
+
+    <Button
+        android:text="@string/play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/play_button" />
+
+    <Button
+        android:text="@string/about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/about_button" />
+
+    <Button
+        android:text="@string/exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/exit_button" />
+</LinearLayout>
 
 
 
