@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">BlackJack_Assignment1</string>
+    <string name="blackjack">BlackJack v1.0</string>
+    <string name="david">David Roach</string>
+    <string name="thomas">Thomas Crozier</string>
+    <string name="dev_by">Developed By:</string>
+    <string name="year">2017</string>
+    <string name="class_section">CSCI 4020 W1</string>
 </resources>
