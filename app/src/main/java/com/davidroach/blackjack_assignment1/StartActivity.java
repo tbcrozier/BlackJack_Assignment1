@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.content.Intent;
 
 public class StartActivity extends AppCompatActivity {
 
@@ -24,6 +25,8 @@ public class StartActivity extends AppCompatActivity {
         playButton.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){
+                /* @ end of class */
+                goToPlayGame();
 
             }
 
@@ -35,6 +38,7 @@ public class StartActivity extends AppCompatActivity {
         aboutButton.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){
+                goToAbout();
 
             }
 
@@ -47,6 +51,7 @@ public class StartActivity extends AppCompatActivity {
         exitButton.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View v){
+                exitApp();
 
             }
 
@@ -55,4 +60,24 @@ public class StartActivity extends AppCompatActivity {
 
 
     }
+
+    void goToPlayGame(){
+        Intent intent = new Intent(this, GameActivity.class);
+        startActivity(intent);
+
+    }
+
+    void goToAbout(){
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
+
+    }
+
+
+    void exitApp(){
+        /* Exit app code */
+
+    }
+
+
 }
