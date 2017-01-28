@@ -3,4 +3,6 @@
 Assignment 1
 David Roach & Thomas Crozier
 
-Sheets getting real.
+[David]
+Currently laying out the activity_game.xml file.  
+There needs to be a skeleton before we can start game logic.
