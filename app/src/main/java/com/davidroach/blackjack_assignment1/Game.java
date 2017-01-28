@@ -7,6 +7,8 @@ package com.davidroach.blackjack_assignment1;
 public class Game {
 
     public int betSize;
+    public int playerHandScore;
+    public int dealerHandScore;
 
     /* Will be used to show card in dynamic image view. */
     public String[] cardFileNames = {
@@ -119,6 +121,16 @@ public class Game {
     }
 
     public void dealerWin(){
+
+    }
+
+
+    public void aceCheck(){
+        //Choose value of ace (1 or 11)
+        //If the value of 11 will make player bust choose the value of 1
+
+
+
 
     }
 
