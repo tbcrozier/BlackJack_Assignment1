@@ -72,6 +72,17 @@ public class Game {
 
     /* Constructor */
     public Game(){
+        //init variables
+
+
+        //create player objects
+
+        //
+
+    }
+
+
+    public void play(){
 
     }
 
