@@ -8,10 +8,12 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/green"
     tools:context="com.davidroach.blackjack_assignment1.AboutActivity">
 
     <TextView
-        android:text="TextView"
+        android:text="@string/blackjack"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -20,7 +22,7 @@
         tools:textSize="36sp" />
 
     <TextView
-        android:text="TextView"
+        android:text="@string/year"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView6"
@@ -31,7 +33,7 @@
         android:layout_marginBottom="80dp" />
 
     <TextView
-        android:text="TextView"
+        android:text="@string/class_section"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView7"
@@ -42,7 +44,7 @@
         android:layout_marginBottom="10dp" />
 
     <TextView
-        android:text="TextView"
+        android:text="@string/thomas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView5"
@@ -52,7 +54,7 @@
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:text="TextView"
+        android:text="@string/dev_by"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView3"
@@ -63,7 +65,7 @@
         android:layout_marginBottom="52dp" />
 
     <TextView
-        android:text="TextView"
+        android:text="@string/david"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView4"

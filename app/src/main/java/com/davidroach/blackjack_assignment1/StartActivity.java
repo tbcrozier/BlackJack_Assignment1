@@ -13,6 +13,6 @@ public class StartActivity extends AppCompatActivity {
         /* Disable title bar */
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        setContentView(R.layout.activity_start);
+        setContentView(R.layout.activity_about);
     }
 }

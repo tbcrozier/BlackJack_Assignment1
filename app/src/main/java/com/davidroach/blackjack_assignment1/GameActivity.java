@@ -6,6 +6,7 @@ import android.view.Window;
 
 /**
  * Created by droach-dev on 1/26/17.
+ * Joined by bcrozier on 1/28/17.
  */
 
 public class GameActivity extends AppCompatActivity {
