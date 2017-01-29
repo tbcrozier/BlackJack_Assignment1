@@ -19,6 +19,10 @@ public class GameActivity extends AppCompatActivity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         setContentView(R.layout.activity_game);
+
+
+
+        Game game = new Game();
     }
 
 

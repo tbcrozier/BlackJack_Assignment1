@@ -10,6 +10,11 @@ public class Game {
     public int playerHandScore;
     public int dealerHandScore;
 
+    Player dealer;
+    Player player;
+
+    Deck deck;
+
 
 
     /* need to figure out how the deck is going to work.
@@ -22,7 +27,13 @@ public class Game {
         //init variables
 
 
+
         //create player objects
+
+        //run main loop
+        play();
+
+
 
 
 
@@ -31,6 +42,8 @@ public class Game {
 
     //Main loop in here.
     public void play(){
+        deck = new Deck();
+        deck.shuffleDeck();
 
     }
 
