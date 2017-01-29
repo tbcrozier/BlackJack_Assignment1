@@ -10,6 +10,8 @@ public class Game {
     public int playerHandScore;
     public int dealerHandScore;
 
+
+
     /* Will be used to show card in dynamic image view. */
     public String[] cardFileNames = {
             "ace_of_clubs.png",
@@ -88,13 +90,7 @@ public class Game {
 
     }
 
-    public void shuffleDeck(){
 
-    }
-
-    public void dealCard(){
-
-    }
 
     public void takeHit(){
 
@@ -113,30 +109,55 @@ public class Game {
 
 
     public void placeBet(){
+        //show bet popup
+        //take value from that popup and add it to betSize variable
 
     }
 
     public void youWin(){
+        //show you win popup
+        //remove bet size from player pot.
+
+
+        //restart game
+        restartGame();
 
     }
 
     public void dealerWin(){
+        //show dealer win popup
+        //remove bet size from player pot.
+
+
+        //restart game
+        restartGame();
+
+    }
+
+    public void addToScore(Player playerIn, int cardValueIn){
+        //if card val is zero it is an ace.
+        //check and see if adding 11 would bust player
+        //if it will use the ace as a 1
+        if(cardValueIn ==0){
+
+            if((playerIn.handScore + cardValueIn) > 21){
+                playerIn.handScore ++;
+            }
+            else{
+                playerIn.handScore += 11;
+            }
+
+        }
+        else{
+            playerIn.handScore += cardValueIn;
+        }
+
 
     }
 
 
-    public void aceCheck(){
-        //Choose value of ace (1 or 11)
-        //If the value of 11 will make player bust choose the value of 1
-
-
-
+    public void restartGame(){
 
     }
-
-
-
-
-
 
 }

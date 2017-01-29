@@ -7,7 +7,8 @@
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        tools:context="com.davidroach.blackjack_assignment1.GameActivity">
+        tools:context="com.davidroach.blackjack_assignment1.GameActivity"
+        android:background="@drawable/background">
 
 
   <TextView

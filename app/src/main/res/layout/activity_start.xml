@@ -7,6 +7,7 @@
         android:paddingRight="16dp"
         android:orientation="vertical"
         tools:context="com.davidroach.blackjack_assignment1.StartActivity"
+        android:background="@drawable/background"
         android:gravity="center_horizontal">
 
         <TextView
