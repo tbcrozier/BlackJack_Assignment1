@@ -1,5 +1,7 @@
 package com.davidroach.blackjack_assignment1;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
@@ -23,6 +25,7 @@ public class GameActivity extends AppCompatActivity {
 
 
         Game game = new Game();
+        gameResult(game);
     }
 
 
@@ -33,4 +36,22 @@ public class GameActivity extends AppCompatActivity {
 
 
 
+    public void gameResult(Game gameObject){
+        //show you win popup
+        //remove bet size from player pot.
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(gameObject.winnerString)
+                .setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //do things
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
+
+
+        //restart game
+        gameObject.restartGame();
+    }
 }
