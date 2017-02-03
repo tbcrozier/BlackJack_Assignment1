@@ -24,6 +24,7 @@
      android:layout_weight="1"
      android:textAlignment="center" />
 
+
   <TextView
       android:text="@string/chip_label"
       android:layout_width="wrap_content"
@@ -59,6 +60,7 @@
 
  </LinearLayout>
 
+
  <LinearLayout
      android:orientation="vertical"
      android:layout_width="match_parent"
@@ -72,6 +74,23 @@
       android:id="@+id/dealer_section">
 
 
+   <TextView
+       android:text="@string/your_score"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/player_score_tv"
+       android:layout_weight="1"
+       android:textColor="@android:color/white"
+       android:textSize="20sp" />
+
+   <TextView
+       android:text="@string/dealer_score"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/dealer_score_tv"
+       android:layout_weight="1"
+       android:textColor="@android:color/white"
+       android:textSize="20sp" />
   </LinearLayout>
 
   <LinearLayout
@@ -104,11 +123,29 @@
      android:text="@string/stand_label"
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
+
      android:id="@+id/stand_button"
      android:textSize="20sp"
      android:background="@color/red"
      android:padding="20dp"
-     android:layout_marginTop="20dp"/>
+     android:layout_marginTop="20dp"
+     android:id="@+id/stand_button" />
+
+ <TextView
+     android:text="@string/chip_label"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:id="@+id/chip_tv"
+     android:textSize="20sp"
+     android:textColor="@android:color/white" />
+
+ <TextView
+     android:text="0"
+     android:layout_width="324dp"
+     android:layout_height="20dp"
+     android:id="@+id/chip_count_tv"
+     android:textColor="@android:color/white"
+     android:textSize="20sp" />
 
 </LinearLayout>
 

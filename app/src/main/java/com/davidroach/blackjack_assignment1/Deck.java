@@ -95,8 +95,13 @@ public class Deck {
     }
 
     //pop top card integer from deck array.
-    public void dealCard(){
+    public void dealCard(Player playerIn){
 
+        //take current card value and add it to player hand score
+        playerIn.handScore += cardVals[deckIndex[deckPosition]];
+
+        //move to next position in the deck
+        deckPosition++;
     }
 
 
@@ -108,8 +113,6 @@ public class Deck {
             return true;
         }
         else{
-            //advance deck position
-            deckPosition++;
             return false;
         }
     }
@@ -117,7 +120,9 @@ public class Deck {
     //use value returned as file name when showing card that is drawn.
     public String getCardImageName(){
 
-         return cardFileNames[deckIndex[deckPosition]];
+        String outstring = cardFileNames[deckIndex[deckPosition]];
+
+         return outstring;
 
     }
 

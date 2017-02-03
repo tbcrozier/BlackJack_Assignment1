@@ -1,5 +1,8 @@
 package com.davidroach.blackjack_assignment1;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+
 /**
  * Created by droach-dev on 1/28/17.
  */
@@ -10,8 +13,16 @@ public class Game {
     public int playerHandScore;
     public int dealerHandScore;
 
-    Player dealer;
-    Player player;
+    Player dealerObj;
+    Player playerObj;
+
+    String winnerString;
+    String DEALER_WINS = "Dealer Wins.";
+    String YOU_WIN = "You Win!!!";
+
+    boolean playerWins;
+    boolean dealerBusts;
+    boolean playerBusts;
 
     Deck deck;
 
@@ -25,10 +36,22 @@ public class Game {
     /* Constructor */
     public Game(){
         //init variables
+        betSize = 0;
+        playerHandScore = 0;
+        dealerHandScore = 0;
 
-
+        //create deck object
+        deck = new Deck();
 
         //create player objects
+        dealerObj = new Player();
+        playerObj = new Player();
+
+        playerObj.name = "Dealer";
+        playerObj.name = "You";
+
+        playerObj.chipCount = 100;
+        /* Dealer does not need a chip count */
 
         //run main loop
         play();
@@ -41,55 +64,105 @@ public class Game {
 
 
     //Main loop in here.
+
     public void play(){
-        deck = new Deck();
+
+        //get deck ready
         deck.shuffleDeck();
 
+
+
+
+
+       /*Initial deal*/
+        deck.dealCard(playerObj);
+        deck.dealCard(dealerObj);
+        deck.dealCard(playerObj);
+        deck.dealCard(dealerObj);
+
+        /* check player hand for blackjack */
+        if(hasBlackJack(playerObj) == true){
+            winnerString = YOU_WIN;
+            playerWins = true;
+
+        }
+
+
+
+        /* Dealer takes hits until score is 16 or greater or he goes over 21 */
+
+
+        /* Compare Scores here */
+
+
+        /* Set winner string */
+
+
+
+
+
+        /* Restart */
+        //restartGame();
+
     }
 
 
 
-    public void takeHit(){
+    public void takeHit(Player playerIn){
+        deck.dealCard(playerIn);
+
 
     }
 
-    public void takeStand(){
+    public void takeStand(Player playerIn){
 
     }
 
 
     //Pass hand variables to these functions.
     //once you figure out its type
-    public void dealerCheckHand(){
+    /* MAY NOT BE NEEDED */
+    public boolean dealerCheckHand(){
+        //return true if dealer wants to take a stand
+        return true;
+
+        //return false if dealer wants to take a hit
 
     }
 
 
-    public void placeBet(){
+    public void placeBet(Player playerIn){
         //show bet popup
+
         //take value from that popup and add it to betSize variable
 
     }
 
+
+
+    /* WILL NEED TO BE REMOVED BEFORE PRODUCTION */
+    /*
+
     public void youWin(){
         //show you win popup
         //remove bet size from player pot.
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Look at this dialog!")
+                .setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //do things
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
 
 
         //restart game
         restartGame();
-
     }
+*/
 
-    public void dealerWin(){
-        //show dealer win popup
-        //remove bet size from player pot.
-
-
-        //restart game
-        restartGame();
-
-    }
 
     public void addToScore(Player playerIn, int cardValueIn){
         //if card val is zero it is an ace.
@@ -112,9 +185,33 @@ public class Game {
 
     }
 
+    public void compareScores(Player dealerObj, Player playerObj){
+
+        if(dealerObj.handScore > playerObj.handScore){
+            //dealer wins
+            playerWins = false;
+
+        }
+        else{
+            //User wins
+            playerWins = true;
+        }
+
+
+    }
+
+    public boolean hasBlackJack(Player playerIn){
+        if(playerIn.handScore == 21){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
 
     public void restartGame(){
-
+        play();
     }
 
 }
