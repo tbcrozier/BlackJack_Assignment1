@@ -10,18 +10,54 @@
         tools:context="com.davidroach.blackjack_assignment1.GameActivity"
         android:background="@drawable/background">
 
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="2">
+
+ <TextView
+     android:text="@string/bet_label"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:id="@+id/bet_label_tv"
+     android:layout_weight="1"
+     android:textAlignment="center" />
 
   <TextView
       android:text="@string/chip_label"
-      android:layout_width="match_parent"
+      android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:id="@+id/textView8" />
+      android:id="@+id/chip_label_tv"
+      android:layout_weight="1"
+      android:textAlignment="center" />
+
+</LinearLayout>
+
+ <LinearLayout
+     android:orientation="horizontal"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:weightSum="2">
 
   <TextView
      android:text="0"
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
-     android:id="@+id/chip_count_tv" />
+     android:id="@+id/bet_count_tv"
+     android:layout_weight="1"
+     android:textAlignment="center"/>
+
+  <TextView
+      android:text="0"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/chip_count_tv"
+      android:layout_weight="1"
+      android:textAlignment="center"/>
+
+
+ </LinearLayout>
 
  <LinearLayout
      android:orientation="vertical"
@@ -45,16 +81,9 @@
       android:id="@+id/player_section">
 
 
+
+
   </LinearLayout>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -66,12 +95,20 @@
      android:text="@string/hit_label"
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
-     android:id="@+id/hit_button" />
+     android:id="@+id/hit_button"
+     android:textSize="20sp"
+     android:background="@color/red"
+     android:padding="20dp"/>
 
  <Button
      android:text="@string/stand_label"
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
-     android:id="@+id/stand_button" />
+     android:id="@+id/stand_button"
+     android:textSize="20sp"
+     android:background="@color/red"
+     android:padding="20dp"
+     android:layout_marginTop="20dp"/>
+
 </LinearLayout>
 

@@ -28,3 +28,5 @@ I will try to work on only one thing at a time.
 If i find a decent casino font I will change it and you can tell me what you think.
 I took your green background idea and changed it to an image.  
 If we can get a decent font we might have something here.
+
+[Blake]

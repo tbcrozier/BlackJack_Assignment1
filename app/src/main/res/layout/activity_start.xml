@@ -20,20 +20,30 @@
 
     <Button
         android:text="@string/play"
+        android:textSize="20sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/play_button" />
+        android:layout_marginTop="20dp"
+        android:background="@color/red"
+        android:id="@+id/play_button"
+        android:elevation="0dp" />
 
     <Button
         android:text="@string/about"
+        android:textSize="20sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/red"
         android:id="@+id/about_button" />
 
     <Button
         android:text="@string/exit"
+        android:textSize="20sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/red"
         android:id="@+id/exit_button" />
 </LinearLayout>
 
