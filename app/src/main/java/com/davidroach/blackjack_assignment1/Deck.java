@@ -98,9 +98,7 @@ public class Deck {
     public void dealCard(Player playerIn){
 
         //take current card value and add it to player hand score
-
-
-
+        playerIn.handScore += cardVals[deckIndex[deckPosition]];
 
         //move to next position in the deck
         deckPosition++;

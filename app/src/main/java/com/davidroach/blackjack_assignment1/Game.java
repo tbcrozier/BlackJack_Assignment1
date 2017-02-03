@@ -13,14 +13,16 @@ public class Game {
     public int playerHandScore;
     public int dealerHandScore;
 
-    Player dealer;
-    Player player;
+    Player dealerObj;
+    Player playerObj;
 
     String winnerString;
     String DEALER_WINS = "Dealer Wins.";
     String YOU_WIN = "You Win!!!";
 
     boolean playerWins;
+    boolean dealerBusts;
+    boolean playerBusts;
 
     Deck deck;
 
@@ -42,13 +44,13 @@ public class Game {
         deck = new Deck();
 
         //create player objects
-        dealer = new Player();
-        player = new Player();
+        dealerObj = new Player();
+        playerObj = new Player();
 
-        player.name = "Dealer";
-        player.name = "You";
+        playerObj.name = "Dealer";
+        playerObj.name = "You";
 
-        player.chipCount = 100;
+        playerObj.chipCount = 100;
         /* Dealer does not need a chip count */
 
         //run main loop
@@ -62,22 +64,39 @@ public class Game {
 
 
     //Main loop in here.
+
     public void play(){
 
         //get deck ready
         deck.shuffleDeck();
 
-        /* Dealer turn here*/
 
 
 
-        /*  Player turn here */
+
+       /*Initial deal*/
+        deck.dealCard(playerObj);
+        deck.dealCard(dealerObj);
+        deck.dealCard(playerObj);
+        deck.dealCard(dealerObj);
+
+        /* check player hand for blackjack */
+        if(hasBlackJack(playerObj) == true){
+            winnerString = YOU_WIN;
+            playerWins = true;
+
+        }
+
+
+
+        /* Dealer takes hits until score is 16 or greater or he goes over 21 */
 
 
         /* Compare Scores here */
 
 
         /* Set winner string */
+
 
 
 
@@ -179,6 +198,15 @@ public class Game {
         }
 
 
+    }
+
+    public boolean hasBlackJack(Player playerIn){
+        if(playerIn.handScore == 21){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
 

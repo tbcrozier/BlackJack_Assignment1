@@ -13,4 +13,6 @@
     <string name="chip_label">Chips:</string>
     <string name="hit_label">Hit me!</string>
     <string name="stand_label">Stand</string>
+    <string name="dealer_score">Dealer:</string>
+    <string name="your_score">You:</string>
 </resources>

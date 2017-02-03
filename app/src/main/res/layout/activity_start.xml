@@ -16,7 +16,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/textView"
             android:layout_centerHorizontal="true"
-            android:textSize="36sp" />
+            android:textSize="36sp"
+            android:textColor="@android:color/white" />
 
     <Button
         android:text="@string/play"
