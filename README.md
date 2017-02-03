@@ -28,3 +28,13 @@ I will try to work on only one thing at a time.
 If i find a decent casino font I will change it and you can tell me what you think.
 I took your green background idea and changed it to an image.  
 If we can get a decent font we might have something here.
+
+[Blake]
+Have been experiencing problems with my AVD Emulator. Went to Dr. Nicholsonja today and he
+helped me get it working. Not exactly sure what the issue was, but since its working now and
+I can test my code I am going to attempt to catch up to you on on workload.
+
+My plan is to follow the lead you have set. I feel like I have somewhat of a grip on how you have
+laid the activities out, and I am going to take a closer look at the different classes you have
+created. Ideally this weekend we could plan a time to discuss in more detail how we want the
+app to look, and function. I will email you some times when I will be free. 
