@@ -22,17 +22,6 @@
         tools:textSize="36sp" />
 
     <TextView
-        android:text="@string/class_section"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/course_info_tv"
-        tools:text="@string/class_section"
-        android:textSize="20sp"
-        android:layout_above="@+id/year_tv"
-        android:layout_alignStart="@+id/dev_by_tv"
-        android:layout_marginBottom="10dp" />
-
-    <TextView
         android:text="@string/year"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -116,6 +105,7 @@
 
     <TextView
         android:text="Card Values"
+        android:textSize="22sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/card_value_tv"
@@ -157,5 +147,15 @@
         android:id="@+id/imageView5"
         android:layout_alignTop="@+id/imageView3"
         android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="@string/class_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/course_info_tv"
+        tools:text="@string/class_section"
+        android:textSize="20sp"
+        android:layout_above="@+id/year_tv"
+        android:layout_alignStart="@+id/dev_by_tv" />
 
 </RelativeLayout>
