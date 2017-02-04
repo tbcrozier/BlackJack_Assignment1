@@ -5,6 +5,10 @@ import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
+import android.widget.TextView;
+import android.widget.Button;
+
+import org.w3c.dom.Text;
 
 import java.util.Objects;
 
@@ -16,8 +20,8 @@ import java.util.Objects;
 public class GameActivity extends AppCompatActivity {
 
     public int betSize;
-    public int playerHandScore;
-    public int dealerHandScore;
+    //public int playerHandScore;
+    //public int dealerHandScore;
 
     Player dealerObj;
     Player playerObj;
@@ -52,8 +56,8 @@ public class GameActivity extends AppCompatActivity {
 
         //init variables
         betSize = 10;
-        playerHandScore = 0;
-        dealerHandScore = 0;
+        //playerHandScore = 0;
+        //dealerHandScore = 0;
 
         //create deck object
         deck = new Deck();
@@ -62,7 +66,7 @@ public class GameActivity extends AppCompatActivity {
         dealerObj = new Player();
         playerObj = new Player();
 
-        playerObj.name = "Dealer";
+        dealerObj.name = "Dealer";
         playerObj.name = "You";
 
         playerObj.chipCount = 100;
@@ -82,6 +86,17 @@ public class GameActivity extends AppCompatActivity {
 
     public void play(){
 
+        /* Bind to UI */
+        TextView betCountTv = (TextView)findViewById(R.id.bet_count_tv);
+        TextView chipCountTv = (TextView)findViewById(R.id.chip_count_tv);
+        TextView playerHandScore = (TextView)findViewById(R.id.player_score_tv);
+        TextView dealerHandScore = (TextView)findViewById(R.id.dealer_score_tv);
+        Button hitButton = (Button)findViewById(R.id.hit_button);
+        Button standButton = (Button)findViewById(R.id.stand_button);
+
+
+
+
         //get deck ready
         deck.shuffleDeck();
 
@@ -93,9 +108,13 @@ public class GameActivity extends AppCompatActivity {
 
        /*Initial deal*/
         deck.dealCard(playerObj);
+        setHandScore(playerObj);
         deck.dealCard(dealerObj);
+        setHandScore(dealerObj);
         deck.dealCard(playerObj);
+        setHandScore(playerObj);
         deck.dealCard(dealerObj);
+        setHandScore(dealerObj);
 
         /* check player hand for blackjack */
         if(hasBlackJack(playerObj) == true){
@@ -107,7 +126,7 @@ public class GameActivity extends AppCompatActivity {
         /* player takes hits here check playerStands before loop iteration */
 
 
-
+int i= 1+1;
 
 
         /* Dealer takes hits until score is 16 or greater or he goes over 21 */
@@ -127,6 +146,32 @@ public class GameActivity extends AppCompatActivity {
 
         /* Restart */
         //restartGame();
+
+    }//end of plaqy
+
+
+    public void setHandScore(Player playerIn){
+        TextView handScoreTv;
+        String outString;
+        boolean inCheck = playerIn.name.equals("Dealer");
+
+        if(inCheck){
+
+            outString = "Dealer: ";
+            handScoreTv = (TextView)findViewById(R.id.dealer_score_tv);
+            handScoreTv.setText(outString + playerIn.handScore);
+        }
+        else{
+            handScoreTv = (TextView)findViewById(R.id.player_score_tv);
+            outString = "You: ";
+            handScoreTv.setText(outString + playerIn.handScore );
+
+        }
+
+
+
+
+
 
     }
 
@@ -162,7 +207,7 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void takeStand(Player playerIn){
-        if(Objects.equals("Dealer",dealerObj.name)){
+        if(Objects.equals("Dealer",playerIn.name)){
             dealerStands = true;
         }
         else{
