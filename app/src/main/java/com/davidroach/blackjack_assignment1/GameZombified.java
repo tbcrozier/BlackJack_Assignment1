@@ -7,7 +7,9 @@ import android.content.DialogInterface;
  * Created by droach-dev on 1/28/17.
  */
 
-public class Game {
+/* Zombified for removal */
+
+public class GameZombified {
 
     public int betSize;
     public int playerHandScore;
@@ -34,7 +36,7 @@ public class Game {
 
 
     /* Constructor */
-    public Game(){
+    public GameZombified(){
         //init variables
         betSize = 0;
         playerHandScore = 0;
@@ -70,7 +72,7 @@ public class Game {
         //get deck ready
         deck.shuffleDeck();
 
-
+       /* place bet here */
 
 
 
@@ -87,6 +89,7 @@ public class Game {
 
         }
 
+        /* player takes hits here */
 
 
         /* Dealer takes hits until score is 16 or greater or he goes over 21 */

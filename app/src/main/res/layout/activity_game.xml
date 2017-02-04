@@ -129,7 +129,7 @@
      android:background="@color/red"
      android:padding="20dp"
      android:layout_marginTop="20dp"
-     android:id="@+id/stand_button" />
+      />
 
  <TextView
      android:text="@string/chip_label"
@@ -139,13 +139,6 @@
      android:textSize="20sp"
      android:textColor="@android:color/white" />
 
- <TextView
-     android:text="0"
-     android:layout_width="324dp"
-     android:layout_height="20dp"
-     android:id="@+id/chip_count_tv"
-     android:textColor="@android:color/white"
-     android:textSize="20sp" />
 
 </LinearLayout>
 
