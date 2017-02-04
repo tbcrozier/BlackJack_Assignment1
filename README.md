@@ -37,4 +37,4 @@ I can test my code I am going to attempt to catch up to you on on workload.
 My plan is to follow the lead you have set. I feel like I have somewhat of a grip on how you have
 laid the activities out, and I am going to take a closer look at the different classes you have
 created. Ideally this weekend we could plan a time to discuss in more detail how we want the
-app to look, and function. I will email you some times when I will be free. 
+app to look, and function. I will email you some times when I will be free.
