@@ -18,7 +18,19 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:id="@+id/blackjack_title_tv"
-        android:textSize="36sp" />
+        tools:text="@string/blackjack"
+        tools:textSize="36sp" />
+
+    <TextView
+        android:text="@string/class_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/course_info_tv"
+        tools:text="@string/class_section"
+        android:textSize="20sp"
+        android:layout_above="@+id/year_tv"
+        android:layout_alignStart="@+id/dev_by_tv"
+        android:layout_marginBottom="10dp" />
 
     <TextView
         android:text="@string/year"
@@ -62,6 +74,16 @@
         android:layout_centerHorizontal="true" />
 
     <TextView
+        android:text="Objective"
+        tools:text="@string/objective"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/blackjack_title_tv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"
+        android:id="@+id/objective_tv" />
+
+    <TextView
         android:text="Number Value of Card"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -70,8 +92,8 @@
         android:layout_below="@+id/card_value_tv" />
 
     <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
         app:srcCompat="@drawable/nine_of_diamonds"
         android:id="@+id/imageView3"
         android:layout_alignTop="@+id/textView6"
@@ -87,12 +109,21 @@
         android:layout_centerHorizontal="true" />
 
     <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
         app:srcCompat="@drawable/two_of_spades"
         android:id="@+id/imageView2"
         android:layout_alignTop="@+id/imageView"
         android:layout_alignStart="@+id/thomas_crozier_tv" />
+
+    <ImageView
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        app:srcCompat="@drawable/jack_of_clubs2"
+        android:layout_alignTop="@+id/imageView3"
+        android:layout_toEndOf="@+id/blackjack_title_tv"
+        android:layout_marginStart="23dp"
+        android:id="@+id/imageView5" />
 
     <TextView
         android:text="Face = 10"
@@ -104,7 +135,6 @@
 
     <TextView
         android:text="Card Values"
-        android:textSize="22sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/card_value_tv"
@@ -121,40 +151,14 @@
         android:layout_alignBottom="@+id/num_card_value_tv"
         android:layout_alignStart="@+id/imageView" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
-        android:id="@+id/objective_tv"
-        android:layout_below="@+id/blackjack_title_tv"
-        android:layout_alignParentStart="true"
-        android:text="@string/objective" />
-
     <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
         app:srcCompat="@drawable/ace_of_hearts"
         android:id="@+id/imageView"
-        android:layout_marginTop="15dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="13dp"
         android:layout_below="@+id/ace_value_tv"
-        android:layout_alignParentStart="true" />
-
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        app:srcCompat="@drawable/jack_of_clubs2"
-        android:id="@+id/imageView5"
-        android:layout_alignTop="@+id/imageView3"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:text="@string/class_section"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/course_info_tv"
-        tools:text="@string/class_section"
-        android:textSize="20sp"
-        android:layout_above="@+id/year_tv"
-        android:layout_alignStart="@+id/dev_by_tv" />
+        android:layout_toStartOf="@+id/blackjack_title_tv" />
 
 </RelativeLayout>

@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">BlackJack_Assignment1</string>
     <string name="blackjack">BlackJack!</string>
-    <string name="objective">Try and make the sum of your cards higher than the sum of the
-        dealers cards, without going over 21.</string>
+    <string name="objective">Beat the dealer by creating a hand that is closest to 21, but do not go
+        over. A player whos hand exceeds 21 automatically looses.</string>
     <string name="david">David Roach</string>
     <string name="thomas">Thomas Crozier</string>
     <string name="dev_by">Developed By:</string>
