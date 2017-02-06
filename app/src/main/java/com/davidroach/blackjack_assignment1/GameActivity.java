@@ -54,7 +54,7 @@ public class GameActivity extends AppCompatActivity {
         betSize = 0;
 
         //create deck object
-        deck = new Deck();
+        //deck = new Deck();
 
         //create player objects
         dealerObj = new Player();
@@ -147,7 +147,8 @@ public class GameActivity extends AppCompatActivity {
         Button standButton = (Button)findViewById(R.id.stand_button);
 
 
-        //get deck ready
+        //create deck object and shuffle deck
+        deck = new Deck();
         deck.shuffleDeck();
 
 
