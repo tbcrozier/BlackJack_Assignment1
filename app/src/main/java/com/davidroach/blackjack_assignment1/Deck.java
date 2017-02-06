@@ -98,34 +98,12 @@ public class Deck {
     public void dealCard(Player playerIn){
 
         //take current card value and add it to player hand score
-        addToScore(playerIn,cardVals[deckIndex[deckPosition]]);
-
-       // playerIn.handScore += cardVals[deckIndex[deckPosition]];
+        playerIn.handScore += cardVals[deckIndex[deckPosition]];
 
         //move to next position in the deck
         deckPosition++;
     }
 
-    public void addToScore(Player playerIn, int cardValueIn){
-        //if card val is zero it is an ace.
-        //check and see if adding 11 would bust player
-        //if it will use the ace as a 1
-        if(cardValueIn ==0){
-
-            if((playerIn.handScore + cardValueIn) > 21){
-                playerIn.handScore ++;
-            }
-            else{
-                playerIn.handScore += 11;
-            }
-
-        }
-        else{
-            playerIn.handScore += cardValueIn;
-        }
-
-
-    }
 
 
 
