@@ -2,22 +2,19 @@ package com.davidroach.blackjack_assignment1;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 import android.widget.Button;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
+
 import android.widget.EditText;
 import android.content.res.Configuration;
 
 
-import org.w3c.dom.Text;
+
 
 import java.util.Objects;
 
@@ -29,9 +26,6 @@ import java.util.Objects;
 public class GameActivity extends AppCompatActivity {
 
     public int betSize;
-    //public int playerHandScore;
-    //public int dealerHandScore;
-
     Player dealerObj;
     Player playerObj;
 
@@ -39,12 +33,6 @@ public class GameActivity extends AppCompatActivity {
     String DEALER_WINS = "Dealer Wins.";
     String YOU_WIN = "You Win!!!";
     String PUSH = "Push.";
-
-    boolean dealerStands = false;
-    boolean playerStands = false;
-
-    boolean dealerBusts;
-    boolean playerBusts;
 
     Deck deck;
 
@@ -62,12 +50,8 @@ public class GameActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_game);
 
-
-
         //init variables
         betSize = 0;
-        //playerHandScore = 0;
-        //dealerHandScore = 0;
 
         //create deck object
         deck = new Deck();
@@ -87,7 +71,8 @@ public class GameActivity extends AppCompatActivity {
 
         //run main loop
         play();
-        //gameResult();
+        //restart game
+
     }
 
 
@@ -130,15 +115,9 @@ public class GameActivity extends AppCompatActivity {
 
 
 
-
         // 3. Get the AlertDialog from create()
         AlertDialog dialog = builder.create();
         dialog.show();
-
-
-
-
-
 
     }
 
@@ -157,18 +136,19 @@ public class GameActivity extends AppCompatActivity {
 
         TextView playerHandScore = (TextView)findViewById(R.id.player_score_tv);
         TextView dealerHandScore = (TextView)findViewById(R.id.dealer_score_tv);
+
+        /* Resets textviews for subsequent hands*/
+        playerHandScore.setText("");
+        dealerHandScore.setText("");
+        playerObj.handScore = 0;
+        dealerObj.handScore = 0;
+
         Button hitButton = (Button)findViewById(R.id.hit_button);
         Button standButton = (Button)findViewById(R.id.stand_button);
 
 
-
-
         //get deck ready
         deck.shuffleDeck();
-
-       /* place bet here */
-        //betsize init to 10.  will need to be handled by a popup
-        placeBet(playerObj);
 
 
 
@@ -202,9 +182,7 @@ public class GameActivity extends AppCompatActivity {
         });
 
 
-
         int i = 1+1; //debug stopper
-
 
 
     }//end of play
@@ -245,11 +223,12 @@ public class GameActivity extends AppCompatActivity {
                 .setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        //do things
+                        restartGame();
                     }
                 });
         AlertDialog alert = builder.create();
         alert.show();
+
 
         if(winnerString.equals(YOU_WIN)){
             /* Add betsize to chipcount, update chipcount text view*/
@@ -259,16 +238,12 @@ public class GameActivity extends AppCompatActivity {
 
         }
         else{
-            /*subtract betsize to chipcount, update chipcount text view */
+            /* subtract betsize to chipcount, update chipcount text view */
             playerObj.chipCount -= betSize;
             chipCountTv.setText(Integer.toString(playerObj.chipCount));
 
         }
 
-
-
-        //restart game
-        //restartGame();
     }
 
 
@@ -284,6 +259,14 @@ public class GameActivity extends AppCompatActivity {
 
     public void dealerTurn(){
         //dealer takes turns card and takes hits until >16 or bust
+
+        if(playerObj.handScore <= 21) {  //if player busts no need to draw cards.
+            while (dealerObj.handScore < 17) {
+                deck.dealCard(dealerObj);
+                setHandScore(dealerObj);
+
+            }
+        }
         takeStand(dealerObj);
     }
 
@@ -292,6 +275,7 @@ public class GameActivity extends AppCompatActivity {
 
         /*  check player wins boolean here */
         gameResult();
+
 
 
     }
@@ -312,33 +296,12 @@ public class GameActivity extends AppCompatActivity {
     }
 
 
-    //Pass hand variables to these functions.
-    //once you figure out its type
-    /* MAY NOT BE NEEDED */
-    public boolean dealerCheckHand(){
-        //return true if dealer wants to take a stand
-        return true;
-
-        //return false if dealer wants to take a hit
-
-    }
-
-
-    public void placeBet(Player playerIn){
-        //show bet popup
-
-        //take value from that popup and add it to betSize variable
-
-    }
-
-
-
     public void compareScores(Player dealerObj, Player playerObj){
         if(dealerObj.handScore == playerObj.handScore){
             winnerString = PUSH;
 
         }
-        else if(dealerObj.handScore > playerObj.handScore || playerObj.handScore > 21){
+        else if((dealerObj.handScore > playerObj.handScore && dealerObj.handScore < 22) || playerObj.handScore > 21){
             //dealer wins
 
             winnerString = DEALER_WINS;
@@ -352,6 +315,7 @@ public class GameActivity extends AppCompatActivity {
 
 
     }
+
 
     public boolean hasBlackJack(Player playerIn){
         if(playerIn.handScore == 21){
