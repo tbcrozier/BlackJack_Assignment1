@@ -9,9 +9,11 @@ import android.view.Window;
 import android.widget.TextView;
 import android.widget.Button;
 import android.widget.LinearLayout;
-
+import android.widget.ImageView;
 import android.widget.EditText;
 import android.content.res.Configuration;
+import android.util.DisplayMetrics;
+import android.widget.RelativeLayout;
 
 
 
@@ -33,6 +35,12 @@ public class GameActivity extends AppCompatActivity {
     String DEALER_WINS = "Dealer Wins.";
     String YOU_WIN = "You Win!!!";
     String PUSH = "Push.";
+
+    /* For card file names */
+    String[] playerCardsInHand;
+    String[] dealerCardsInHand;
+
+    int overlap_int = 1;
 
     Deck deck;
 
@@ -104,8 +112,8 @@ public class GameActivity extends AppCompatActivity {
 
                 /* get value of edittext and assign it to betsize */
                 betSize = Integer.parseInt(input.getText().toString());
-                TextView betCountTv = (TextView)findViewById(R.id.bet_count_tv);
-                betCountTv.setText(Integer.toString(betSize));
+                TextView betCountTv = (TextView)findViewById(R.id.bet_label_tv);
+                betCountTv.setText("Bet: " + Integer.toString(betSize));
 
 
                 setHandScore(playerObj);
@@ -155,9 +163,17 @@ public class GameActivity extends AppCompatActivity {
 
        /*Initial deal*/
         deck.dealCard(playerObj);
+        showCardImage(playerObj);
+
         deck.dealCard(dealerObj);
+        showCardImage(dealerObj);
+
+
         deck.dealCard(playerObj);
+        showCardImage(playerObj);
+
         deck.dealCard(dealerObj);
+        showCardImage(dealerObj);
 
         /* check player hand for blackjack */
         if(hasBlackJack(playerObj) == true){
@@ -215,7 +231,7 @@ public class GameActivity extends AppCompatActivity {
 
     public void gameResult(){
 
-        TextView chipCountTv = (TextView)findViewById(R.id.chip_count_tv);
+        TextView chipCountTv = (TextView)findViewById(R.id.chip_label_tv);
 
         //show you win popup
         //remove bet size from player pot.
@@ -234,14 +250,14 @@ public class GameActivity extends AppCompatActivity {
         if(winnerString.equals(YOU_WIN)){
             /* Add betsize to chipcount, update chipcount text view*/
             playerObj.chipCount += betSize;
-            chipCountTv.setText(Integer.toString(playerObj.chipCount));
+            chipCountTv.setText("$ " + Integer.toString(playerObj.chipCount));
 
 
         }
         else{
             /* subtract betsize to chipcount, update chipcount text view */
             playerObj.chipCount -= betSize;
-            chipCountTv.setText(Integer.toString(playerObj.chipCount));
+            chipCountTv.setText("$ " + Integer.toString(playerObj.chipCount));
 
         }
 
@@ -252,6 +268,7 @@ public class GameActivity extends AppCompatActivity {
 
     public void takeHit(Player playerIn){
         deck.dealCard(playerIn);
+        showCardImage(playerIn);
         setHandScore(playerIn);
 
 
@@ -264,6 +281,7 @@ public class GameActivity extends AppCompatActivity {
         if(playerObj.handScore <= 21) {  //if player busts no need to draw cards.
             while (dealerObj.handScore < 17) {
                 deck.dealCard(dealerObj);
+                showCardImage(dealerObj);
                 setHandScore(dealerObj);
 
             }
@@ -326,6 +344,53 @@ public class GameActivity extends AppCompatActivity {
             return false;
         }
     }
+
+
+
+
+    public void showCardImage(Player playerIn){
+        ImageView img = new ImageView(this);
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+        int width = metrics.widthPixels;
+        int height = metrics.heightPixels;
+
+        LinearLayout imgHolder;
+
+
+
+        if(playerIn.name.equals("Dealer")){
+           imgHolder = (LinearLayout) findViewById(R.id.dealer_section);
+        }
+        else{
+            imgHolder = (LinearLayout) findViewById(R.id.player_section);
+        }
+
+
+
+
+        img.setImageResource(deck.getCardImageID());
+
+
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(width/6, height/6);
+        img.setLayoutParams(params);
+
+
+
+
+
+
+
+        imgHolder.addView(img);
+
+
+    }
+
+
+
+
 
 
 
