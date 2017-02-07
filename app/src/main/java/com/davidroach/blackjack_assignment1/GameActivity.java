@@ -362,7 +362,9 @@ public class GameActivity extends AppCompatActivity {
 
 
         if(playerIn.name.equals("Dealer")){
-           imgHolder = (LinearLayout) findViewById(R.id.dealer_section);
+
+            imgHolder = (LinearLayout) findViewById(R.id.dealer_section);
+
         }
         else{
             imgHolder = (LinearLayout) findViewById(R.id.player_section);
@@ -407,6 +409,4 @@ public class GameActivity extends AppCompatActivity {
     }
 
 }
-
-
 

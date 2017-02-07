@@ -66,7 +66,6 @@ public class Deck {
             "two_of_diamonds.png",
             "two_of_hearts.png",
             "two_of_spades.png",
-
     };
 */
 
@@ -128,6 +127,7 @@ public class Deck {
     };
 
 
+
     //when a random number between 1 and 52 is picked access this array with that number.
     //the zeros represent aces and need to be proccessed for value.
     public int[] cardVals = {0,0,0,0,8,8,8,8,5,5,5,5,4,4,4,4,10,10,10,10,10,10,10,10,9,9,9,9,10,10,10,10,7,7,7,7,6,6,6,6,10,10,10,10,3,3,3,3,2,2,2,2};
@@ -152,7 +152,7 @@ public class Deck {
             deckIndex[i] = a;
         }
 
-           //shuffle debug line int a = 1+1;
+        //shuffle debug line int a = 1+1;
     }
 
     //pop top card integer from deck array.
@@ -204,7 +204,9 @@ public class Deck {
         /*CHECK THIS*/
         int resID = cardFileNames[deckIndex[deckPosition-1]];
 
-         return resID;
+
+        return resID;
+
 
     }
 
