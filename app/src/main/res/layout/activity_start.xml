@@ -32,10 +32,11 @@
             android:layout_height="match_parent"
             android:id="@+id/blackjack_title_tv"
             android:textSize="36sp"
-            android:textColor="@android:color/white"
             android:layout_weight="1.41"
             android:gravity="center_vertical"
-            android:textStyle="normal|bold" />
+            android:textStyle="normal|bold"
+            android:fontFamily="cursive"
+            android:textColor="@android:color/white" />
 
     </LinearLayout>
 
@@ -89,7 +90,8 @@
             android:layout_marginTop="20dp"
             android:background="@color/red"
             android:id="@+id/play_button"
-            android:elevation="0dp" />
+            android:elevation="0dp"
+            android:textColor="@android:color/white" />
 
         <Button
             android:text="@string/about"
@@ -98,7 +100,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@color/red"
-            android:id="@+id/about_button" />
+            android:id="@+id/about_button"
+            android:textColor="@android:color/white" />
 
         <Button
             android:text="@string/exit"
@@ -107,7 +110,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@color/red"
-            android:id="@+id/exit_button" />
+            android:id="@+id/exit_button"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
     <LinearLayout
