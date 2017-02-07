@@ -397,6 +397,11 @@ public class GameActivity extends AppCompatActivity {
 
     public void restartGame(){
         //reset variables call play again.
+        if(((LinearLayout) findViewById(R.id.player_section)).getChildCount() > 0)
+            ((LinearLayout) findViewById(R.id.player_section)).removeAllViews();
+
+        if(((LinearLayout) findViewById(R.id.dealer_section)).getChildCount() > 0)
+            ((LinearLayout) findViewById(R.id.dealer_section)).removeAllViews();
 
         play();
     }
