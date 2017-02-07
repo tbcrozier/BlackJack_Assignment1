@@ -21,4 +21,11 @@
     <string name="dialog_title"></string>
     <string name="dialog_message">Place Your bet:</string>
     <string name="ok">Ok</string>
+    <string name="card_values_title">Card Values</string>
+    <string name="hit_desc">Hit: Draw another card to the hand.</string>
+    <string name="stand_desc">Stand: Stop at the current total.</string>
+    <string name="card_num_value">Number Value of Card</string>
+    <string name="face_num_value">Face = 10</string>
+    <string name="ace_num_value">1 OR 11</string>
+    <string name="player_choices_title">Player Choices</string>
 </resources>
