@@ -18,7 +18,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:id="@+id/blackjack_title_tv"
-        android:textSize="36sp" />
+        android:textSize="36sp"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:text="@string/year"
@@ -67,7 +68,8 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/imageView2"
         android:id="@+id/num_card_value_tv"
-        android:layout_below="@+id/card_value_tv" />
+        android:layout_below="@+id/card_value_tv"
+        android:textColor="@android:color/white" />
 
     <ImageView
         android:layout_width="60dp"
@@ -100,7 +102,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/num_card_value_tv"
         android:layout_alignEnd="@+id/imageView5"
-        android:id="@+id/face_value_tv" />
+        android:id="@+id/face_value_tv"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:text="Card Values"
@@ -110,7 +113,8 @@
         android:id="@+id/card_value_tv"
         android:layout_marginTop="22dp"
         android:layout_below="@+id/objective_tv"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:text="1 OR 11"
@@ -119,7 +123,8 @@
         android:id="@+id/ace_value_tv"
         android:layout_alignBaseline="@+id/num_card_value_tv"
         android:layout_alignBottom="@+id/num_card_value_tv"
-        android:layout_alignStart="@+id/imageView" />
+        android:layout_alignStart="@+id/imageView"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -128,7 +133,8 @@
         android:id="@+id/objective_tv"
         android:layout_below="@+id/blackjack_title_tv"
         android:layout_alignParentStart="true"
-        android:text="@string/objective" />
+        android:text="@string/objective"
+        android:textColor="@android:color/white" />
 
     <ImageView
         android:layout_width="60dp"
