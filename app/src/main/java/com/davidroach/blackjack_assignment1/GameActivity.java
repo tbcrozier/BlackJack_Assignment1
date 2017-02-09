@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.EditText;
 import android.content.res.Configuration;
 import android.util.DisplayMetrics;
-import android.widget.RelativeLayout;
+
 
 
 
@@ -35,13 +35,8 @@ public class GameActivity extends AppCompatActivity {
     String YOU_WIN = "You Win!!!";
     String PUSH = "Push.";
 
-    /* For card file names */
-    String[] playerCardsInHand;
-    String[] dealerCardsInHand;
-
-    int overlap_int = 1;
-
     Deck deck;
+
 
 
     @Override
@@ -76,6 +71,10 @@ public class GameActivity extends AppCompatActivity {
     }
 
 
+
+
+
+
     public void betPopup(){
 
         // 1. Instantiate an AlertDialog.Builder with its constructor
@@ -87,6 +86,7 @@ public class GameActivity extends AppCompatActivity {
 
         final EditText input = new EditText(GameActivity.this);
         input.setText("1");
+        input.setLines(1);
 
         input.setRawInputType(Configuration.KEYBOARD_12KEY); //show number keybord for input
 
@@ -104,6 +104,32 @@ public class GameActivity extends AppCompatActivity {
                 betSize = Integer.parseInt(input.getText().toString());
                 TextView betCountTv = (TextView)findViewById(R.id.bet_label_tv);
                 betCountTv.setText("Bet: " + Integer.toString(betSize));
+
+                //create deck object and shuffle deck
+                deck = new Deck();
+                deck.shuffleDeck();
+
+
+                /*Initial deal*/
+                deck.dealCard(playerObj);
+                showCardImage(playerObj);
+
+                deck.dealCard(dealerObj);
+                showCardImage(dealerObj);
+
+
+                deck.dealCard(playerObj);
+                showCardImage(playerObj);
+
+                deck.dealCard(dealerObj);
+                showCardImage(dealerObj);
+
+        /* check player hand for blackjack */
+                if(hasBlackJack(playerObj) == true){
+                    winnerString = YOU_WIN;
+
+
+                }
 
 
                 setHandScore(playerObj);
@@ -144,32 +170,10 @@ public class GameActivity extends AppCompatActivity {
         Button standButton = (Button)findViewById(R.id.stand_button);
 
 
-        //create deck object and shuffle deck
-        deck = new Deck();
-        deck.shuffleDeck();
 
 
 
-       /*Initial deal*/
-        deck.dealCard(playerObj);
-        showCardImage(playerObj);
 
-        deck.dealCard(dealerObj);
-        showCardImage(dealerObj);
-
-
-        deck.dealCard(playerObj);
-        showCardImage(playerObj);
-
-        deck.dealCard(dealerObj);
-        showCardImage(dealerObj);
-
-        /* check player hand for blackjack */
-        if(hasBlackJack(playerObj) == true){
-            winnerString = YOU_WIN;
-
-
-        }
 
 
         /* hit button onclick listener */
@@ -365,11 +369,8 @@ public class GameActivity extends AppCompatActivity {
 
         img.setImageResource(deck.getCardImageID());
 
-
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(width/6, height/6);
         img.setLayoutParams(params);
-
-
 
         imgHolder.addView(img);
 
