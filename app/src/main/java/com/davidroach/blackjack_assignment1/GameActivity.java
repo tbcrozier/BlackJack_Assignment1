@@ -22,7 +22,6 @@ import java.util.Objects;
 
 /**
  * Created by droach-dev on 1/26/17.
- * Joined by bcrozier on 1/28/17.
  */
 
 public class GameActivity extends AppCompatActivity {
@@ -37,10 +36,6 @@ public class GameActivity extends AppCompatActivity {
     String PUSH = "Push.";
 
     Deck deck;
-
-
-
-
 
 
 
@@ -69,9 +64,6 @@ public class GameActivity extends AppCompatActivity {
         playerObj.chipCount = 100;
         /* Dealer does not need a chip count */
 
-
-
-
         //run main loop
         play();
         //restart game
@@ -84,8 +76,6 @@ public class GameActivity extends AppCompatActivity {
 
 
     public void betPopup(){
-
-
 
         // 1. Instantiate an AlertDialog.Builder with its constructor
         AlertDialog.Builder builder = new AlertDialog.Builder(GameActivity.this);
@@ -148,7 +138,6 @@ public class GameActivity extends AppCompatActivity {
         });
 
 
-
         // 3. Get the AlertDialog from create()
         AlertDialog dialog = builder.create();
         dialog.show();
@@ -179,6 +168,7 @@ public class GameActivity extends AppCompatActivity {
 
         Button hitButton = (Button)findViewById(R.id.hit_button);
         Button standButton = (Button)findViewById(R.id.stand_button);
+
 
 
 
@@ -361,11 +351,13 @@ public class GameActivity extends AppCompatActivity {
         int width = metrics.widthPixels;
         int height = metrics.heightPixels;
 
+
         LinearLayout imgHolder;
 
 
 
         if(playerIn.name.equals("Dealer")){
+
 
             imgHolder = (LinearLayout) findViewById(R.id.dealer_section);
 
@@ -374,27 +366,26 @@ public class GameActivity extends AppCompatActivity {
             imgHolder = (LinearLayout) findViewById(R.id.player_section);
         }
 
+
         img.setImageResource(deck.getCardImageID());
 
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(width/6, height/6);
         img.setLayoutParams(params);
-        imgHolder.addView(img);
 
+        imgHolder.addView(img);
 
     }
 
 
 
 
-
-
-
-
     public void restartGame(){
         //reset variables call play again.
+        //BC:Changed linear layout to relative layout
         if(((LinearLayout) findViewById(R.id.player_section)).getChildCount() > 0)
             ((LinearLayout) findViewById(R.id.player_section)).removeAllViews();
 
+        //BC:Changed linear layout to relative layout
         if(((LinearLayout) findViewById(R.id.dealer_section)).getChildCount() > 0)
             ((LinearLayout) findViewById(R.id.dealer_section)).removeAllViews();
 
