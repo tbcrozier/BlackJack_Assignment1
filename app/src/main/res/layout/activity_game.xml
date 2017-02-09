@@ -89,15 +89,6 @@
 
 
    <TextView
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:id="@+id/player_score_tv"
-       android:layout_weight="1"
-       android:textColor="@android:color/white"
-       android:textSize="17sp"
-       android:textAlignment="center" />
-
-   <TextView
       android:text=""
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
@@ -106,36 +97,89 @@
       android:textColor="@android:color/white"
       android:textSize="17sp"
        android:textAlignment="center" />
-   </LinearLayout>
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/player_score_tv"
+       android:layout_weight="1"
+       android:textColor="@android:color/white"
+       android:textSize="17sp"
+       android:textAlignment="center" />
+  </LinearLayout>
 
 
  </LinearLayout>
 
 
  <LinearLayout
-     android:orientation="vertical"
+     android:orientation="horizontal"
      android:layout_width="match_parent"
-     android:layout_height="240dp"
-     android:id="@+id/game_board">
+     android:layout_height="180dp"
+     android:id="@+id/game_board"
+     android:weightSum="2">
 
-  <LinearLayout
-      android:orientation="horizontal"
+  <RelativeLayout
       android:layout_width="match_parent"
-      android:layout_height="120dp"
-      android:id="@+id/dealer_section">
+      android:layout_height="180dp"
+      android:id="@+id/dealer_section"
+      android:layout_weight="1">
 
 
-  </LinearLayout>
+  </RelativeLayout>
 
-  <LinearLayout
-      android:orientation="horizontal"
+  <RelativeLayout
       android:layout_width="match_parent"
-      android:layout_height="120dp"
-      android:id="@+id/player_section">
+      android:layout_height="180dp"
+      android:id="@+id/player_section"
+      android:layout_weight="1">
 
 
-  </LinearLayout>
+  </RelativeLayout>
 
+ </LinearLayout>
+
+ <LinearLayout
+     android:orientation="horizontal"
+     android:layout_width="match_parent"
+     android:layout_height="80dp"
+     android:weightSum="4">
+
+  <ImageButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:srcCompat="@drawable/poker_chip_five"
+      android:id="@+id/chip_five_button"
+      android:scaleType="centerInside"
+      android:backgroundTint="@android:color/transparent"
+      android:layout_weight="1" />
+
+  <ImageButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/poker_chip_twentyfive"
+      android:id="@+id/chip_twentyfive_button"
+      android:backgroundTint="@android:color/transparent"
+      android:scaleType="centerInside"
+      android:layout_weight="1"/>
+
+  <ImageButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/poker_chip_fifty"
+      android:backgroundTint="@android:color/transparent"
+      android:scaleType="centerInside"
+      android:id="@+id/chip_fifty_button"
+      android:layout_weight="1" />
+
+  <ImageButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/poker_chip_hundred"
+      android:backgroundTint="@android:color/transparent"
+      android:scaleType="centerInside"
+      android:id="@+id/chip_hundred_button"
+      android:layout_weight="1" />
 
  </LinearLayout>
 
@@ -152,9 +196,12 @@
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
      android:layout_marginTop="10dp"
+     android:layout_marginBottom="10dp"
      android:id="@+id/stand_button"
      android:textSize="20sp"
      android:background="@color/red" />
+
+
 
 </LinearLayout>
 

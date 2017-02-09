@@ -22,7 +22,6 @@ import java.util.Objects;
 
 /**
  * Created by droach-dev on 1/26/17.
- * Joined by bcrozier on 1/28/17.
  */
 
 public class GameActivity extends AppCompatActivity {
@@ -43,10 +42,6 @@ public class GameActivity extends AppCompatActivity {
     int overlap_int = 1;
 
     Deck deck;
-
-
-
-
 
 
     @Override
@@ -74,9 +69,6 @@ public class GameActivity extends AppCompatActivity {
         playerObj.chipCount = 100;
         /* Dealer does not need a chip count */
 
-
-
-
         //run main loop
         play();
         //restart game
@@ -85,8 +77,6 @@ public class GameActivity extends AppCompatActivity {
 
 
     public void betPopup(){
-
-
 
         // 1. Instantiate an AlertDialog.Builder with its constructor
         AlertDialog.Builder builder = new AlertDialog.Builder(GameActivity.this);
@@ -120,7 +110,6 @@ public class GameActivity extends AppCompatActivity {
                 setHandScore(dealerObj);
             }
         });
-
 
 
         // 3. Get the AlertDialog from create()
@@ -181,6 +170,7 @@ public class GameActivity extends AppCompatActivity {
 
 
         }
+
 
         /* hit button onclick listener */
         hitButton.setOnClickListener(new View.OnClickListener() {
@@ -357,53 +347,47 @@ public class GameActivity extends AppCompatActivity {
         int width = metrics.widthPixels;
         int height = metrics.heightPixels;
 
-        LinearLayout imgHolder;
+        //BC:Changed linear layout to relative layout
+        RelativeLayout imgHolder;
 
 
 
         if(playerIn.name.equals("Dealer")){
 
-            imgHolder = (LinearLayout) findViewById(R.id.dealer_section);
+            //BC:Changed linear layout to relative layout
+            imgHolder = (RelativeLayout) findViewById(R.id.dealer_section);
 
         }
         else{
-            imgHolder = (LinearLayout) findViewById(R.id.player_section);
+            //BC:Changed linear layout to relative layout
+            imgHolder = (RelativeLayout) findViewById(R.id.player_section);
         }
-
-
 
 
         img.setImageResource(deck.getCardImageID());
 
-
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(width/6, height/6);
+        //BC:Changed linear layout to relative layout
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(width/6, height/6);
         img.setLayoutParams(params);
 
 
 
-
-
-
-
         imgHolder.addView(img);
-
 
     }
 
 
 
 
-
-
-
-
     public void restartGame(){
         //reset variables call play again.
-        if(((LinearLayout) findViewById(R.id.player_section)).getChildCount() > 0)
-            ((LinearLayout) findViewById(R.id.player_section)).removeAllViews();
+        //BC:Changed linear layout to relative layout
+        if(((RelativeLayout) findViewById(R.id.player_section)).getChildCount() > 0)
+            ((RelativeLayout) findViewById(R.id.player_section)).removeAllViews();
 
-        if(((LinearLayout) findViewById(R.id.dealer_section)).getChildCount() > 0)
-            ((LinearLayout) findViewById(R.id.dealer_section)).removeAllViews();
+        //BC:Changed linear layout to relative layout
+        if(((RelativeLayout) findViewById(R.id.dealer_section)).getChildCount() > 0)
+            ((RelativeLayout) findViewById(R.id.dealer_section)).removeAllViews();
 
         play();
     }
