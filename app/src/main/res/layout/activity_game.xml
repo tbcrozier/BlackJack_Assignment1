@@ -119,25 +119,47 @@
      android:id="@+id/game_board"
      android:weightSum="2">
 
-  <RelativeLayout
+  <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="180dp"
       android:id="@+id/dealer_section"
-      android:layout_weight="1">
+      android:layout_weight="1"
+      android:orientation="horizontal">
 
 
-  </RelativeLayout>
+  </LinearLayout>
 
-  <RelativeLayout
+  <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="180dp"
       android:id="@+id/player_section"
-      android:layout_weight="1">
+      android:layout_weight="1"
+      android:orientation="horizontal">
 
 
-  </RelativeLayout>
+  </LinearLayout>
 
  </LinearLayout>
+
+ <Button
+     android:text="@string/hit_label"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:id="@+id/hit_button"
+     android:textSize="20sp"
+     android:background="@color/red" />
+
+ <Button
+     android:text="@string/stand_label"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginTop="10dp"
+     android:layout_marginBottom="10dp"
+     android:id="@+id/stand_button"
+     android:textSize="20sp"
+     android:background="@color/red" />
+
+
 
  <LinearLayout
      android:orientation="horizontal"
@@ -182,25 +204,6 @@
       android:layout_weight="1" />
 
  </LinearLayout>
-
- <Button
-     android:text="@string/hit_label"
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     android:id="@+id/hit_button"
-     android:textSize="20sp"
-     android:background="@color/red" />
-
- <Button
-     android:text="@string/stand_label"
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     android:layout_marginTop="10dp"
-     android:layout_marginBottom="10dp"
-     android:id="@+id/stand_button"
-     android:textSize="20sp"
-     android:background="@color/red" />
-
 
 
 </LinearLayout>

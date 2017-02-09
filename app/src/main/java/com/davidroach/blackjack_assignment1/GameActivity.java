@@ -347,27 +347,26 @@ public class GameActivity extends AppCompatActivity {
         int width = metrics.widthPixels;
         int height = metrics.heightPixels;
 
-        //BC:Changed linear layout to relative layout
-        RelativeLayout imgHolder;
+
+        LinearLayout imgHolder;
 
 
 
         if(playerIn.name.equals("Dealer")){
 
-            //BC:Changed linear layout to relative layout
-            imgHolder = (RelativeLayout) findViewById(R.id.dealer_section);
+
+            imgHolder = (LinearLayout) findViewById(R.id.dealer_section);
 
         }
         else{
-            //BC:Changed linear layout to relative layout
-            imgHolder = (RelativeLayout) findViewById(R.id.player_section);
+            imgHolder = (LinearLayout) findViewById(R.id.player_section);
         }
 
 
         img.setImageResource(deck.getCardImageID());
 
-        //BC:Changed linear layout to relative layout
-        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(width/6, height/6);
+
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(width/6, height/6);
         img.setLayoutParams(params);
 
 
@@ -382,12 +381,12 @@ public class GameActivity extends AppCompatActivity {
     public void restartGame(){
         //reset variables call play again.
         //BC:Changed linear layout to relative layout
-        if(((RelativeLayout) findViewById(R.id.player_section)).getChildCount() > 0)
-            ((RelativeLayout) findViewById(R.id.player_section)).removeAllViews();
+        if(((LinearLayout) findViewById(R.id.player_section)).getChildCount() > 0)
+            ((LinearLayout) findViewById(R.id.player_section)).removeAllViews();
 
         //BC:Changed linear layout to relative layout
-        if(((RelativeLayout) findViewById(R.id.dealer_section)).getChildCount() > 0)
-            ((RelativeLayout) findViewById(R.id.dealer_section)).removeAllViews();
+        if(((LinearLayout) findViewById(R.id.dealer_section)).getChildCount() > 0)
+            ((LinearLayout) findViewById(R.id.dealer_section)).removeAllViews();
 
         play();
     }
