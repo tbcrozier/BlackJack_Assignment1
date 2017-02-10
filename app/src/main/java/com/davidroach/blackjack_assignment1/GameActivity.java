@@ -155,7 +155,7 @@ public class GameActivity extends AppCompatActivity {
 
 
         TextView chipCountTv = (TextView)findViewById(R.id.chip_count_tv);
-        chipCountTv.setText(Integer.toString(playerObj.chipCount));
+        chipCountTv.setText("$ " + Integer.toString(playerObj.chipCount));
 
         TextView playerHandScore = (TextView)findViewById(R.id.player_score_tv);
         TextView dealerHandScore = (TextView)findViewById(R.id.dealer_score_tv);
@@ -225,7 +225,7 @@ public class GameActivity extends AppCompatActivity {
 
     public void gameResult(){
 
-        TextView chipCountTv = (TextView)findViewById(R.id.chip_label_tv);
+        TextView chipCountTv = (TextView)findViewById(R.id.chip_count_tv);
 
         //show you win popup
         //remove bet size from player pot.
